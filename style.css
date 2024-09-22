@@ -1,0 +1,762 @@
+ <!-- CSS Styling for the header -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      box-sizing: border-box;
+    }
+  
+    .navbar {
+      background-color: #3498db;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .logo h1 {
+      color: #fff;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+.nav-links {
+      list-style: none;
+      display: flex;
+      margin-right: 20px;
+      padding: 0;
+    }
+  
+    .nav-links li {
+      margin-right: 20px;
+    }
+  
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  
+    .nav-links a:hover {
+      color: #f1c40f;
+    }
+  /* Mobile Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+  
+    .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #fff;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+  
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #3498db;
+        width: 100%;
+        text-align: center;
+      }
+  
+      .nav-links li {
+        margin: 20px 0;
+      }
+  
+      .menu-toggle {
+        display: flex;
+      }
+  
+      .menu-toggle.active + .nav-links {
+        display: flex;
+      }
+    }
+  
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+ <!-- CSS Styling for Hero Section -->
+  <style>
+    .hero {
+      background-color: #f9f9f9;
+      padding: 100px 20px;
+      text-align: center;
+      background-image: url('your-high-quality-background-image.jpg'); /* Add your background image */
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      background-attachment: fixed; /* Optional: Makes the background image fixed */
+      alt: "A descriptive alt text for the background image"; /* Add alt text for accessibility */
+    }
+/* Dark overlay for better text readability */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+      z-index: 1;
+    }
+  
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.85); /* White background with opacity */
+      border-radius: 8px;
+    }
+  .hero-title {
+      font-size: 2.8rem;
+      color: #3498db;
+      margin-bottom: 20px;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.8rem;
+      color: #f1c40f;
+      margin-bottom: 10px;
+    }
+  
+    .hero-description {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.4;
+      margin-bottom: 30px; /* Adjusted margin-bottom */
+      font-family: 'Open Sans', sans-serif; /* Ensure consistent font */
+    }
+  
+    .highlight-text {
+      font-weight: bold;
+      color: #3498db; /* Matching color */
+      font-size: 1.2rem; /* Consistent size */
+      font-style: normal; /* Normal style to match */
+      text-shadow: none; /* No shadow to match the rest of the text */
+    }
+ .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+  
+    .btn-primary, .btn-secondary {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #fff;
+      transition: background-color 0.3s;
+      display: inline-flex;
+      align-items: center;
+    }
+  
+    .btn-primary {
+      background-color: #2ecc71; /* Green */
+    }
+  
+    .btn-secondary {
+      background-color: #e74c3c; /* Red */
+    }
+  
+    .btn-primary:hover {
+      background-color: #27ae60;
+    }
+  
+    .btn-secondary:hover {
+      background-color: #c0392b;
+    }
+  
+    .btn-primary i, .btn-secondary i {
+      margin-right: 8px;
+    }
+  
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+  
+      .hero-subtitle {
+        font-size: 1.5rem;
+      }
+  
+      .hero-description {
+        font-size: 1rem;
+      }
+  
+      .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+.about {
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 5px solid #3498db;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.about-summary {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-description ol {
+  list-style: decimal;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.about-description strong {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.btn-cta {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.btn-cta:hover {
+  background-color: #2980b9;
+}
+<!-- CSS Styling for Education Section -->
+  <style>
+    .education {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  
+    .education-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    .education-title {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-bottom: 30px;
+    }
+  
+    .education-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+ .education-item {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+  
+    .education-institution {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
+    .education-details {
+      font-size: 1.1rem;
+      color: #555;
+      margin: 5px 0;
+    }
+  
+    .certification-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .certification-item {
+      font-size: 1.1rem;
+      color: #555;
+    }
+  
+    @media (max-width: 768px) {
+      .education-title {
+        font-size: 2rem;
+      }
+  
+      .education-item {
+        padding: 15px;
+      }
+  
+      .education-institution {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+<!-- CSS Styling for Skills Section -->
+  <style>
+    .skills {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  
+    .skills-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .skills-title {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-bottom: 30px;
+    }
+  
+    .skills-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .skills-category {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+  
+    .skills-category-title {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+  
+    .skills-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .skills-item {
+      font-size: 1.1rem;
+      color: #555;
+      margin: 5px 0;
+    }
+  
+    @media (max-width: 768px) {
+      .skills-content {
+        flex-direction: column;
+      }
+  
+      .skills-title {
+        font-size: 2rem;
+      }
+  
+      .skills-category {
+        padding: 15px;
+      }
+  
+      .skills-category-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+<!-- CSS Styling for Experience Section -->
+  <style>
+    .experience {
+      background-color: #e9ecef;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  
+    .experience-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    .experience-title {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-bottom: 30px;
+    }
+  
+    .experience-item {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+  
+    .experience-role {
+      font-size: 1.8rem;
+      color: #2ecc71;
+      margin-bottom: 10px;
+    }
+  
+    .experience-details {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+      text-align: left;
+    }
+  
+    .experience-details a {
+      color: #3498db;
+      text-decoration: none;
+    }
+  
+    .experience-details a:hover {
+      text-decoration: underline;
+    }
+  
+    .media-items {
+      margin-top: 20px;
+    }
+  
+    .media-item {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+  
+    .media-item h4 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
+    audio {
+      width: 100%;
+      max-width: 600px;
+    }
+  
+    @media (max-width: 768px) {
+      .experience-title {
+        font-size: 2rem;
+      }
+  
+      .experience-details {
+        font-size: 1rem;
+      }
+    }
+  </style>
+<!-- CSS Styling for Achievements Section -->
+  <style>
+    .achievements {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  
+    .achievements-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    .achievements-title {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-bottom: 30px;
+    }
+  
+    .achievement-item {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+  
+    .achievement-title {
+      font-size: 1.8rem;
+      color: #2ecc71;
+      margin-bottom: 10px;
+    }
+  
+    .achievement-details {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+    }
+  
+    .btn-see-certificate {
+      display: inline-block;
+      color: #3498db;
+      text-decoration: none;
+      margin-top: 10px;
+      font-size: 1rem;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      padding: 5px 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+  
+    .btn-see-certificate:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+  
+    @media (max-width: 768px) {
+      .achievements-title {
+        font-size: 2rem;
+      }
+  
+      .achievement-details {
+        font-size: 1rem;
+      }
+    }
+  </style>
+<!-- CSS Styling for Blogs Section -->
+  <style>
+    .blogs {
+      background-color: #f8f9fa;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  
+    .blogs-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  
+    .blogs-title {
+      font-size: 2.5rem;
+      color: #3498db;
+      margin-bottom: 30px;
+    }
+  
+    .blog-item {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+  
+    .blog-title {
+      font-size: 1.8rem;
+      color: #2ecc71;
+      margin-bottom: 10px;
+    }
+  
+    .blog-summary {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+    }
+  
+    .btn-read-more {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  
+    .btn-read-more:hover {
+      background-color: #2980b9;
+    }
+  
+    @media (max-width: 768px) {
+      .blogs-title {
+        font-size: 2rem;
+      }
+  
+      .blog-summary {
+        font-size: 1rem;
+      }
+    }
+  </style>
+   
+   <section id="contact" class="contact">
+  <div class="contact-container">
+    <h2 class="contact-title">Get in Touch</h2>
+    <p class="contact-description">
+      I’d love to hear from you! Whether you have a question, feedback, or just want to connect, feel free to reach out to me through the form below or through my LinkedIn profile.
+    </p>
+    <!-- Formspree form -->
+    <form action="https://formspree.io/f/xldrkkbq" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <!-- Hidden input to disable CAPTCHA if needed -->
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+    <p class="contact-socials">
+      You can also connect with me on <a href="https://www.linkedin.com/in/vaishnavi-r-aa9970238" target="_blank">LinkedIn</a>.
+    </p>
+  </div>
+</section>
+
+<!-- CSS Styling for Contact Section -->
+<style>
+  .contact {
+    background-color: #e9ecef;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 20px;
+  }
+
+  .contact-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .btn-submit {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn-submit:hover {
+    background-color: #2980b9;
+  }
+
+  .contact-socials {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+
+  .contact-socials a {
+    color: #3498db;
+    text-decoration: none;
+  }
+
+  .contact-socials a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .contact-title {
+      font-size: 2rem;
+    }
+
+    .contact-description {
+      font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      font-size: 0.9rem;
+    }
+  }
+</style>
